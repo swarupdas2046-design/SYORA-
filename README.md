@@ -7,3 +7,5 @@
 Whether you're smiling, feeling low, or simply neutral, SYORA aims to connect your expressions with music that matches your moment.
 
 **Your expressions. Your mood. Your music.** 💜
+
+## the website is underConstruction 🫠
