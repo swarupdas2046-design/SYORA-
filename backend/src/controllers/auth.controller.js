@@ -1,3 +1,4 @@
+import redis from "../config/cache.js";
 import authModel from "../models/auth.model.js";
 import blacklistModel from "../models/blacklisted.model.js";
 import { loginService, registerService } from "../services/auth.service.js";
@@ -60,7 +61,9 @@ export const logoutController = asyncHandler(async (req, res) => {
   if (!token) throw new ApiError("No token found", 400);
   res.clearCookie("token");
 
-  await blacklistModel.create({ token });
+  // await blacklistModel.create({ token });
+
+  await redis.set(token,Date.now().toString())
 
   return res
     .status(200)
